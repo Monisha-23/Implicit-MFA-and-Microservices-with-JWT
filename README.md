@@ -47,7 +47,7 @@ Thus, this way can add extra layers of security to the application which protect
 
 ## Project Reference
 
-<b>*Source Code - *https://github.com/Monisha-23/Implicit-MFA-and-Microservices-with-JWT*</b>
+<b>Source Code - *https://github.com/Monisha-23/Implicit-MFA-and-Microservices-with-JWT</b>
 
 ## About The Developers
 
@@ -58,7 +58,6 @@ Thus, this way can add extra layers of security to the application which protect
 <a href = "https://github.com/Monisha-23">Chippada Monisha</a><br>
 A third year undergraduate in B.Tech, Computer Science and Engineering at Guru Ghasidas Vishwavidyalaya, Bilaspur, India.<br/>
   </td>
-  <td>
 </tr>
 </table>
 

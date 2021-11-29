@@ -88,7 +88,6 @@ A third year undergraduate in B.Tech, Computer Science and Engineering at Guru G
  - Website copyright 2021 @ <a href = "https://github.com/Monisha-23">Chippada Monisha</a> 
  - Theme Reference  - Bootstrap
  - Code Snippet Reference - Codepen and W3Schools
- - Image Copyright - Unslash
 
  
  

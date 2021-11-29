@@ -41,6 +41,28 @@ Step 4 : Later the microservices check the signature of the token and if the use
 
 Thus, this way can add extra layers of security to the application which protects your sensitive data and also authenticates the user in more effective way.
 
+## How to Run ?
+
+* Install all the requirements provided in the requirements.txt
+* Add your email id and password in views.py in main/userapp/views.py
+
+```python 
+  smtp = smtplib.SMTP('<Your-email-id>', 587)
+  smtp.ehlo()
+  smtp.starttls()
+  smtp.login('<From-email-id>', '<email-password>')
+```
+ 
+* Run **main application** on *8000* server
+
+ > py manage.py runserver 8000
+
+* Run **api application** on *5000* server
+
+> py manage.py runserver 5000
+
+That's it, we're done!
+
 ## Tech-Stacks Invoved
 
 <img src = "https://img.shields.io/badge/-HTML-yellow?style=for-the-badge&logo=HTML5" height = "40">&nbsp;&nbsp;<img src = "https://img.shields.io/badge/-CSS-blue?style=for-the-badge&logo=CSS3" height = "40">&nbsp;&nbsp;<img src = "https://img.shields.io/badge/-BOOTSTRAP-orange?style=for-the-badge&logo=Bootstrap" height = "40">&nbsp;&nbsp;<img src = "https://img.shields.io/badge/-DJANGO-green?style=for-the-badge&logo=DJANGO" height = "40">&nbsp;&nbsp;<img src = "https://img.shields.io/badge/-DJANGORESTFRAMEWORK-red?style=for-the-badge&logo=DJANGO-RESTFRAMEWORK" height = "40">

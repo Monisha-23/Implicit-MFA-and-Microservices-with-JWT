@@ -7,7 +7,7 @@ the there is *no enough protection for database*.
 
 ## About the project
 
-As alreday mentioned about the main problem of data breaches, we can state that to overcome those issuse , developers had come with explicit way of authenticating the user and
+As already mentioned about the main problem of data breaches, we can state that to overcome those issuse , developers had come with explicit way of authenticating the user and
 protecting the database. While in this project would like to concentrate on 2 major solutions and adding some implicit ways to enhance it's performance and security too. And the two fields 
 are the following :
  * MFA, Multifactor authentication : Using more than one method to verify the user and authenticating them, which includes traditional username and password, biometrics, otp etc.

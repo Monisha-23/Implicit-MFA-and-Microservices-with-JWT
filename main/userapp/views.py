@@ -13,7 +13,6 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.core.files.storage import FileSystemStorage
 from PIL import Image
 import imagehash
-from .models import *
 import tkinter as tk
 from hashlib  import md5
 from django.contrib.auth import logout
@@ -29,10 +28,10 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-smtp = smtplib.SMTP('smtp.gmail.com', 587)
+smtp = smtplib.SMTP('<Your-email-id>', 587)
 smtp.ehlo()
 smtp.starttls()
-smtp.login('sniff.red.23@gmail.com', 'sniffer_23')
+smtp.login('<From-email-id>', '<email-password>')
 
 def check(lst):
     if(len(set(lst)) == len(lst)):
@@ -331,7 +330,7 @@ def send_email(request,id,subject="Python Notification",text=""):
     msg.attach(MIMEText(text)) 
     msg = ("Hello,there. \n  " + o + "This is your OTP.")
     to = [user.email]
-    smtp.sendmail(from_addr="sniff.red.23@gmail.com",to_addrs=to, msg=msg)
+    smtp.sendmail(from_addr="<From-email-id>",to_addrs=to, msg=msg)
     print(request,"Email sent")
         
 @login_required

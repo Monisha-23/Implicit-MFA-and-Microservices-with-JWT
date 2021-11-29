@@ -14,7 +14,7 @@ are the following :
  * Microservices : Microservices are an architectural and organizational approach to software development where software is composed of small independent services that communicate 
  over well-defined APIs
  
- ## Our Strategy
+ ## Project Strategy
  
  In this project, I want to introduce to some ***implicit combinations of MFA***, which may add up extra security and also put up some innovative methodology of verifing a user.
  

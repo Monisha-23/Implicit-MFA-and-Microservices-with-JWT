@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<style>
+   .form-label {
+    color: white;
+    font-size: 23px;
+  }
+
+  .button {
+    background-color: white;
+    opacity: 50%;
+    border: 2px solid white;
+    color: black;
+    font-weight: bold;
+    padding: 3%;
+    padding-bottom: 3%;
+    border: 2px solid #212529;
+    font-size: 20px;
+  }
+
+  .button:hover {
+    background-color: white;
+    opacity: 100%;
+    border: 2px solid white;
+    transition: 0.5s;
+    color: #212529;
+  }
+
+  h1 {
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color: white;
+  }
+
+  body {
+    background: #212529;
+  }
+  h3 {
+       color: white;
+       text-align: center;
+   }
+
+  .login{
+    margin-top: 7%;
+  }
+
+  .login h1 {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    text-align: center;
+  }
+   </style>
+<body>
+<div class="login">
+   <h1>
+        AUT BANK | LOGIN
+    </h1>
+     <div class="container" style="padding-top:10px;padding-bottom:10px;border-radius: 12px;width: 700px;height: 430px;">
+        <h3><a href="{% url 'mouse_movement_check' user.id %}" style="text-decoration: none;color:#cac2dd">Click Here</a> to reconize your mouse events</h3>
+        <div class="container" style="background-color:white;opacity: 60%;margin-top: 4%;padding:5%;">
+        <div class="row text-center">
+            {% if messages %}
+           <div class="col-12 text-center">
+              {% for message in messages %}
+              {% if message.tags == 'error' %}
+              <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+              {% endif %}
+               {% if message.tags == 'success' %}
+              <div class="alert alert-sucess" style="margin-top:10px">{{ message }}</div>
+              {% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+            <h4 style="padding-top: 10px;padding-bottom: 10px;">Instructions</h4>
+            <ul>
+                <li>Click on <i>Click here</i> text, an window will be opened.</li>
+                <li>In the Black screen inside the window, all your clicks and scrolls will be detected.</li>
+                <li>All your click and scrolling activities are be registerd as mouse movement passwords.</li>
+                <li>You activities can be detected: </li>
+                <ul>
+                    <li>Single clicks (right,left,middle(scroll))</li>
+                    <li>Double clicks (right,left,middle(scroll))</li>
+                    <li>Scroll down (-1) or Scroll up (+1)</li>
+                </ul>
+                <li>Only the clicks and scrolls inside the black screen are detected.</li>
+                <li>After your mouse movements are finished close the window and click submit.</li>
+            </ul>
+        </div>
+        <form action="{% url 'check' user.id %}" method="POST">
+            {% csrf_token %}
+            {% if ar %}
+             <input type="text" value="{{ar}}" disabled>
+            {% endif %}
+            <div class="row text-center" style="margin-top:3%">
+                <div class="col-12">
+                    <input type="submit" value="SUBMIT" class="button">
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>  
+</body>
+</html>

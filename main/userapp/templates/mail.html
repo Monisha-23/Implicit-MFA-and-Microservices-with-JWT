@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<style>
+    a{
+        background-color:white;
+        opacity: 50%;
+        border: 2px solid white;
+        color: #212529;
+        font-weight: bold;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        border:2px solid #212529;
+        font-size: 20px;
+    }
+    a:hover{
+        background-color: white;
+        opacity: 100%;
+        border:2px solid white;
+        transition: 0.5s;
+        color:#212529;
+    }
+    h1 {
+       text-align:center;
+       padding-top: 3%;
+       padding-bottom: 3%;
+       border-top-left-radius: 15px;
+       border-top-right-radius: 15px;
+       color:rgb(0, 0, 0);
+    }
+     body {
+    background: #212529;
+  }
+
+    
+</style>
+<body>
+    <div class="container text-center" style="background-color:#e1ddec ;border-radius: 12px;width: 900px;height: 600px;margin-top:5%;padding-top: 20px;">
+        <h1>AUTH BANK</h1>
+        <h2>Verify your email address</h2>
+        <h5 style="margin:25px 15px 0px 15px;">Please confirm that you want to use our bank's online services to your <b>{{ user.email }}</b> Once it's done you will be able to start your serivecs.</h5>
+        <div class="row" style="text-align: center;margin-left:10%;margin-right:10%;padding-top: 10%;padding-bottom: 10%;">
+            <a href="{% url 'send_email' user.id %}" style="text-decoration: none;border:2px solid white;">Get OTP</a>
+        </div>
+        <h6>Please verify your email and get the otp for more secure authentication</h6>
+        
+    </div>
+</body>
+</html>

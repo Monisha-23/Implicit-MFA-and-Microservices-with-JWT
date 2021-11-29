@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+    background-color: #eee;
+    overflow-x: hidden;
+}
+
+.nav-link:hover {
+    background-color: #525252 !important
+}
+
+.nav-link .fa {
+    transition: all 1s
+}
+
+.nav-link:hover .fa {
+    transform: rotate(360deg)
+}
+
+</style>
+
+<body>
+
+    <div class="row">
+        <div class="col-3">
+            <div class="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark" style="width: 250px;"> <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> <svg class="bi me-2" width="40" height="32"> </svg> <span class="fs-4">AUTH BANK</span> </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item"> <a href="#" class="nav-link active" aria-current="page"> <i class="fa fa-home"></i><span class="ms-2">Profile</span> </a> </li>
+                    <li> <a href="#" class="nav-link text-white"> <i class="fa fa-dashboard"></i><span class="ms-2">Previous Transctions</span> </a> </li>
+                    <li> <a href="#" class="nav-link text-white"> <i class="fa fa-first-order"></i><span class="ms-2">NetBanking</span> </a> </li>
+                    <li> <a href="#" class="nav-link text-white"> <i class="fa fa-cog"></i><span class="ms-2">Loans</span> </a> </li>
+                    <li> <a href="{% url 'login_acc' user.id %}" class="nav-link text-white"> <i class="fa fa-bookmark"></i><span class="ms-2">Accounts</span> </a> </li>
+                    <li> <a href="{% url 'user_create' user.id %}" class="nav-link text-white"> <i class="fa fa-bookmark"></i><span class="ms-2">New Account</span> </a> </li>
+                </ul>
+                <hr>
+                <div class="dropdown"> <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false"> <img src="https://th.bing.com/th/id/OIP.wcYSnHlaeA66khykqG_yuwHaHa?w=199&h=199&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="" width="32" height="32" class="rounded-circle me-2"> <strong> {{ user.username }} </strong> </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a href="{% url 'logoutuser' user.id %}" class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="container" style="padding-top: 5%;">
+                <h2>My Profile</h2>
+                <hr>
+                <h4>Personal Information</h4>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6"><h6>Name</h6></div>
+                        <div class="col-6">{{ user.username }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"><h6>Date of Birth</h6></div>
+                        <div class="col-6">29-06-1998</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"><h6>Id Proof (Adhaar Number)</h6></div>
+                        <div class="col-6"><h6>1923 4578 2037 4789</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"><h6>PAN</h6></div>
+                        <div class="col-6"><h6>None</div>
+                    </div>
+                </div>
+                <hr>
+                <h4>Contact Information</h4>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6"><h6>Mobile Number</h6></div>
+                        <div class="col-6">+91 9878023456</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"><h6>Alternate Phone Number</h6></div>
+                        <div class="col-6">None</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"><h6>Email ID</h6></div>
+                        <div class="col-6">{{ user.email }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"><h6>Permanent Address</h6></div>
+                        <div class="col-6">D.no - 11/24, Near Post Office, Bankin Streets, Hyderabad, AndhraPradesh, India.</div>
+                    </div>
+                </div>
+                <hr>
+                <h4>Online Accounts Details</h4>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6"><h6>Username</h6></div>
+                        <div class="col-6">{{ user.name }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"><h6>Email ID</h6></div>
+                        <div class="col-6">{{ user.email }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"><h6>Customer Since</h6></div>
+                        <div class="col-6">{{ user.last_joined }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

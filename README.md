@@ -47,7 +47,7 @@ Thus, this way can add extra layers of security to the application which protect
 
 ## Project Reference
 
-<b>Source Code - *https://github.com/Monisha-23/Implicit-MFA-and-Microservices-with-JWT</b>
+<b>Source Code - https://github.com/Monisha-23/Implicit-MFA-and-Microservices-with-JWT</b>
 
 ## About The Developers
 
